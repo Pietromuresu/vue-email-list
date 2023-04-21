@@ -10,6 +10,8 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 
+  <!-- css -->
+ <link rel="stylesheet" href="style.css">
  
 
   <title>Vue Email List</title>
@@ -17,7 +19,8 @@
 <body>
   
   <div id="app">
-    <ul>
+    <div class="lds-ellipsis" v-if="loading"><div></div><div></div><div></div><div></div></div>
+    <ul  v-else>
       <li v-for="email in arrEmails">{{email}}</li>
     </ul>
   </div>

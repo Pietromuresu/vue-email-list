@@ -19,7 +19,7 @@
 <body>
   
   <div id="app">
-    <div class="lds-ellipsis" v-if="loading"><div></div><div></div><div></div><div></div></div>
+    <div class="lds-ellipsis" v-if="limit > arrEmails.length"><div></div><div></div><div></div><div></div></div>
     <ul  v-else>
       <li v-for="email in arrEmails">{{email}}</li>
     </ul>

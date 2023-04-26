@@ -5,20 +5,19 @@ createApp({
     return {
       arrEmails: [],
       email: "",
-      loading: true
+      limit: 100
     }
   },
   methods: {
     getMail(){
 
 
-      for(let i = 0; i < 10; i++){
+      for(let i = 0; i < this.limit; i++){
 
-        axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(result => {
+        axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+        .then(result => {
           this.email = result.data.response
           this.arrEmails.push(this.email)
-          setTimeout(() =>{
-            this.loading = false},2000)
           
         })
        
